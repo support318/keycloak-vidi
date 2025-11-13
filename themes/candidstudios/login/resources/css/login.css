@@ -5,6 +5,15 @@ body {
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
 }
 
+/* Logo styling */
+#kc-header-wrapper img,
+.login-pf-page img[src*="logo"] {
+    max-width: 200px !important;
+    height: auto !important;
+    margin: 20px auto !important;
+    display: block !important;
+}
+
 /* Dark login card with better styling */
 .card-pf,
 .login-pf-page .card-pf {
