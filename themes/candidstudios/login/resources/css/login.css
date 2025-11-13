@@ -1,32 +1,34 @@
 /* Candid Studios Custom Theme */
 
-.login-pf .container {
+body {
     background-color: #1a1a1a;
 }
 
-.login-pf-page .card-pf {
+.login-pf-page {
+    background-color: #1a1a1a;
+}
+
+.card-pf {
     background-color: #2a2a2a;
     border: 1px solid #3a3a3a;
 }
 
-#kc-logo {
-    width: 250px;
-    height: auto;
-    max-width: 100%;
-}
-
-#kc-logo-wrapper {
-    background-image: url("../img/logo.png");
+/* Logo styling - target the actual Keycloak logo container */
+#kc-header-wrapper #kc-header {
+    background-image: url("../img/logo.png") !important;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100px;
-    width: 100%;
-    margin: 20px auto;
+    height: 80px;
+    width: 250px;
+    margin: 0 auto 30px;
 }
 
-.login-pf-page .login-pf-header {
-    margin-bottom: 30px;
+/* Hide the text if there's any */
+#kc-header-wrapper #kc-header a {
+    text-indent: -9999px;
+    display: block;
+    height: 80px;
 }
 
 /* Button styling */
@@ -54,15 +56,24 @@
 }
 
 /* Label styling */
-.login-pf-page label {
+label {
     color: #cccccc;
 }
 
 /* Link styling */
-.login-pf-page a {
+a {
     color: #4a90e2;
 }
 
-.login-pf-page a:hover {
+a:hover {
     color: #357abd;
+}
+
+/* Title/header text */
+#kc-page-title {
+    color: #ffffff;
+}
+
+.login-pf-page-header {
+    margin-bottom: 30px;
 }
