@@ -1,5 +1,15 @@
 /* Candid Studios Custom Theme */
 
+/* Hide default Keycloak logo */
+#kc-header-wrapper,
+.kc-logo,
+.kc-logo-text,
+#kc-logo,
+#kc-logo-wrapper {
+    display: none !important;
+    visibility: hidden !important;
+}
+
 /* Dark background */
 body {
     background-color: #1a1a1a !important;
