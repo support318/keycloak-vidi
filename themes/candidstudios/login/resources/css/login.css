@@ -1,46 +1,16 @@
-/* Candid Studios Custom Theme */
-
-/* Hide default Keycloak logo */
-#kc-header-wrapper,
-.kc-logo,
-.kc-logo-text,
-#kc-logo,
-#kc-logo-wrapper {
-    display: none !important;
-    visibility: hidden !important;
-}
+/* Candid Studios Dark Theme */
 
 /* Dark background */
 body {
-    background-color: #1a1a1a !important;
-    position: relative;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
 }
 
-/* Logo display - absolute positioning at top center */
-body::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 40px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 200px !important;
-    height: 100px !important;
-    background: url(../img/logo.png) no-repeat center center !important;
-    background-size: contain !important;
-    z-index: 9999 !important;
-    display: block !important;
-}
-
-/* Push content down to make room for logo */
-.login-pf-page {
-    padding-top: 160px !important;
-}
-
-/* Dark login card */
+/* Dark login card with better styling */
 .card-pf,
 .login-pf-page .card-pf {
     background-color: #2a2a2a !important;
     border: 1px solid #3a3a3a !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
 }
 
 /* Light text for dark background */
@@ -52,19 +22,20 @@ body::before {
     color: #ffffff !important;
 }
 
-/* Form inputs */
+/* Form inputs with better visibility */
 .form-control {
     background-color: #3a3a3a !important;
-    border-color: #4a4a4a !important;
+    border: 1px solid #4a4a4a !important;
     color: #ffffff !important;
 }
 
 .form-control:focus {
     border-color: #4a90e2 !important;
     background-color: #3a3a3a !important;
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25) !important;
 }
 
-/* Button */
+/* Professional blue buttons */
 .btn-primary {
     background-color: #4a90e2 !important;
     border-color: #4a90e2 !important;
@@ -81,10 +52,18 @@ a {
 }
 
 a:hover {
-    color: #357abd !important;
+    color: #5ba3f5 !important;
+    text-decoration: underline !important;
 }
 
 /* Remember me checkbox label */
 .checkbox label {
     color: #cccccc !important;
+}
+
+/* Error messages */
+.alert-error {
+    background-color: #3a2020 !important;
+    border-color: #5a3030 !important;
+    color: #ff6b6b !important;
 }
