@@ -1,4 +1,4 @@
-/* Candid Studios Custom Theme - Minimal styling */
+/* Candid Studios Custom Theme */
 
 /* Dark background */
 body {
@@ -6,33 +6,24 @@ body {
 }
 
 /* Dark login card */
-.card-pf {
+.card-pf,
+.login-pf-page .card-pf {
     background-color: #2a2a2a !important;
     border: 1px solid #3a3a3a !important;
 }
 
-/* Add logo to header */
-#kc-header {
-    background-image: url("../img/logo.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 80px;
-    margin-bottom: 20px;
-}
-
-/* Hide Keycloak logo text */
-#kc-header a {
-    display: block;
-    text-indent: -9999px;
-    height: 80px;
+/* Logo styling */
+.kc-logo-wrapper {
+    text-align: center;
+    margin: 30px auto;
 }
 
 /* Light text for dark background */
 .card-pf label,
 .card-pf h1,
 .card-pf h2,
-.card-pf p {
+.card-pf p,
+#kc-page-title {
     color: #ffffff !important;
 }
 
@@ -45,6 +36,7 @@ body {
 
 .form-control:focus {
     border-color: #4a90e2 !important;
+    background-color: #3a3a3a !important;
 }
 
 /* Button */
@@ -65,4 +57,9 @@ a {
 
 a:hover {
     color: #357abd !important;
+}
+
+/* Remember me checkbox label */
+.checkbox label {
+    color: #cccccc !important;
 }
