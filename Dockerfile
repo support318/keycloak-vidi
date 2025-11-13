@@ -1,4 +1,4 @@
-FROM quay.io/keycloak/keycloak:26.0.7
+FROM quay.io/keycloak/keycloak:26.4.5
 
 COPY themes/candidstudios /opt/keycloak/themes/candidstudios
 
