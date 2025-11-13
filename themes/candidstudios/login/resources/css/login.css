@@ -12,10 +12,17 @@ body {
     border: 1px solid #3a3a3a !important;
 }
 
-/* Logo styling */
-.kc-logo-wrapper {
-    text-align: center;
-    margin: 30px auto;
+/* Logo display at top of login page */
+#kc-header::before {
+    content: "";
+    display: block;
+    background-image: url('../img/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto 20px;
 }
 
 /* Light text for dark background */
