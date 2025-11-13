@@ -1,79 +1,68 @@
-/* Candid Studios Custom Theme */
+/* Candid Studios Custom Theme - Minimal styling */
 
+/* Dark background */
 body {
-    background-color: #1a1a1a;
+    background-color: #1a1a1a !important;
 }
 
-.login-pf-page {
-    background-color: #1a1a1a;
-}
-
+/* Dark login card */
 .card-pf {
-    background-color: #2a2a2a;
-    border: 1px solid #3a3a3a;
+    background-color: #2a2a2a !important;
+    border: 1px solid #3a3a3a !important;
 }
 
-/* Logo styling - target the actual Keycloak logo container */
-#kc-header-wrapper #kc-header {
-    background-image: url("../img/logo.png") !important;
+/* Add logo to header */
+#kc-header {
+    background-image: url("../img/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     height: 80px;
-    width: 250px;
-    margin: 0 auto 30px;
+    margin-bottom: 20px;
 }
 
-/* Hide the text if there's any */
-#kc-header-wrapper #kc-header a {
-    text-indent: -9999px;
+/* Hide Keycloak logo text */
+#kc-header a {
     display: block;
+    text-indent: -9999px;
     height: 80px;
 }
 
-/* Button styling */
-.btn-primary {
-    background-color: #4a90e2;
-    border-color: #4a90e2;
+/* Light text for dark background */
+.card-pf label,
+.card-pf h1,
+.card-pf h2,
+.card-pf p {
+    color: #ffffff !important;
 }
 
-.btn-primary:hover {
-    background-color: #357abd;
-    border-color: #357abd;
-}
-
-/* Form styling */
+/* Form inputs */
 .form-control {
-    background-color: #3a3a3a;
-    border-color: #4a4a4a;
-    color: #ffffff;
+    background-color: #3a3a3a !important;
+    border-color: #4a4a4a !important;
+    color: #ffffff !important;
 }
 
 .form-control:focus {
-    background-color: #3a3a3a;
-    border-color: #4a90e2;
-    color: #ffffff;
+    border-color: #4a90e2 !important;
 }
 
-/* Label styling */
-label {
-    color: #cccccc;
+/* Button */
+.btn-primary {
+    background-color: #4a90e2 !important;
+    border-color: #4a90e2 !important;
 }
 
-/* Link styling */
+.btn-primary:hover {
+    background-color: #357abd !important;
+    border-color: #357abd !important;
+}
+
+/* Links */
 a {
-    color: #4a90e2;
+    color: #4a90e2 !important;
 }
 
 a:hover {
-    color: #357abd;
-}
-
-/* Title/header text */
-#kc-page-title {
-    color: #ffffff;
-}
-
-.login-pf-page-header {
-    margin-bottom: 30px;
+    color: #357abd !important;
 }
