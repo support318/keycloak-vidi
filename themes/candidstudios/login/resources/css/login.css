@@ -13,15 +13,25 @@ body {
 }
 
 /* Logo display at top of login page */
-#kc-header::before {
+#kc-header {
+    background-image: url('../img/logo.png') !important;
+    background-size: 200px 100px !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    height: 120px !important;
+    display: block !important;
+    margin-bottom: 20px !important;
+}
+
+/* Alternative: Add logo before the form */
+.login-pf-page::before {
     content: "";
     display: block;
     background-image: url('../img/logo.png');
-    background-size: contain;
+    background-size: 200px 100px;
     background-repeat: no-repeat;
     background-position: center;
-    width: 200px;
-    height: 100px;
+    height: 120px;
     margin: 0 auto 20px;
 }
 
