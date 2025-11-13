@@ -1,0 +1,68 @@
+/* Candid Studios Custom Theme */
+
+.login-pf .container {
+    background-color: #1a1a1a;
+}
+
+.login-pf-page .card-pf {
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+}
+
+#kc-logo {
+    width: 250px;
+    height: auto;
+    max-width: 100%;
+}
+
+#kc-logo-wrapper {
+    background-image: url("../img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.login-pf-page .login-pf-header {
+    margin-bottom: 30px;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #4a90e2;
+    border-color: #4a90e2;
+}
+
+.btn-primary:hover {
+    background-color: #357abd;
+    border-color: #357abd;
+}
+
+/* Form styling */
+.form-control {
+    background-color: #3a3a3a;
+    border-color: #4a4a4a;
+    color: #ffffff;
+}
+
+.form-control:focus {
+    background-color: #3a3a3a;
+    border-color: #4a90e2;
+    color: #ffffff;
+}
+
+/* Label styling */
+.login-pf-page label {
+    color: #cccccc;
+}
+
+/* Link styling */
+.login-pf-page a {
+    color: #4a90e2;
+}
+
+.login-pf-page a:hover {
+    color: #357abd;
+}
