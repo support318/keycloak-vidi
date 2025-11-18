@@ -1,7 +1,7 @@
 FROM quay.io/keycloak/keycloak:26.4.5
 
 # Copy Candid Studios custom theme
-COPY themes/cc /opt/keycloak/themes/cc
+COPY themes/candidstudios /opt/keycloak/themes/candidstudios
 
 ENV KC_DB=postgres
 ENV KC_HEALTH_ENABLED=true
