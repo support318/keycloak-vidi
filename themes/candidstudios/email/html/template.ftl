@@ -15,11 +15,9 @@
                     <!-- Header with Logo -->
                     <tr>
                         <td style="padding: 40px 40px 30px 40px; text-align: center; background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); border-radius: 8px 8px 0 0;">
-                            <div style="font-size: 32px; font-weight: 700; color: #ffffff; letter-spacing: 1px;">
-                                CANDID STUDIOS
-                            </div>
-                            <div style="font-size: 14px; color: #cccccc; margin-top: 5px; letter-spacing: 2px;">
-                                PHOTOGRAPHY & VIDEOGRAPHY
+                            <img src="${url.resourcesPath}/img/logo.png" alt="Candid Studios" style="max-width: 200px; height: auto; margin: 0 auto 15px auto; display: block; filter: brightness(0) invert(1);" />
+                            <div style="font-size: 14px; color: #cccccc; margin-top: 10px; letter-spacing: 2px;">
+                                PROFESSIONAL PHOTOGRAPHY & VIDEOGRAPHY
                             </div>
                         </td>
                     </tr>
