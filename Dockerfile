@@ -25,4 +25,8 @@ ENV KC_PROXY=edge
 
 RUN /opt/keycloak/bin/kc.sh build
 
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--optimized"]
+# Copy custom entrypoint script to reset admin password on startup
+COPY entrypoint.sh /opt/keycloak/entrypoint.sh
+RUN chmod +x /opt/keycloak/entrypoint.sh
+
+ENTRYPOINT ["/opt/keycloak/entrypoint.sh"]
