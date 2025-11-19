@@ -1,6 +1,7 @@
 [build]
 builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
+watchPatterns = ["themes/**", "Dockerfile", "railway.toml"]
 
 [deploy]
 startCommand = "/opt/keycloak/bin/kc.sh start --optimized"

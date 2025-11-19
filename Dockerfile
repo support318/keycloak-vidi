@@ -3,6 +3,15 @@ FROM quay.io/keycloak/keycloak:26.4.5
 # Copy Candid Studios custom theme
 COPY themes/candidstudios /opt/keycloak/themes/candidstudios
 
+# Verify theme files are copied (helps debug Railway deployments)
+RUN echo "=== Verifying Candid Studios theme files ===" && \
+    ls -R /opt/keycloak/themes/candidstudios && \
+    echo "=== Email templates ===" && \
+    ls -la /opt/keycloak/themes/candidstudios/email/html/ && \
+    echo "=== Login resources ===" && \
+    ls -la /opt/keycloak/themes/candidstudios/login/resources/img/ && \
+    echo "=== Theme verification complete ==="
+
 ENV KC_DB=postgres
 ENV KC_HEALTH_ENABLED=true
 ENV KC_METRICS_ENABLED=true
