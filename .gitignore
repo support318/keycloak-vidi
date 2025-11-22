@@ -1,0 +1,3 @@
+disable-email-verification.sh
+setup-google-idp.sh
+*.sh

@@ -1,63 +1,126 @@
-/* Candid Studios Dark Theme */
+/* Candid Studios Dark Theme with Glassmorphism */
 
-/* Dark background */
-body {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+/* Dark gradient background */
+body, html {
+    background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%) !important;
+    min-height: 100vh !important;
 }
 
-/* Logo styling */
-#kc-header-wrapper img,
-.login-pf-page img[src*="logo"] {
-    max-width: 200px !important;
-    height: auto !important;
-    margin: 20px auto !important;
-    display: block !important;
+/* Center the login container */
+.login-pf-page {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    padding: 20px !important;
 }
 
-/* Dark login card with better styling */
+/* Header styling */
+#kc-header {
+    max-width: 450px !important;
+    margin: 0 auto !important;
+}
+
+#kc-header-wrapper {
+    text-align: center !important;
+    padding: 20px 0 !important;
+}
+
+/* Glassmorphism login card */
+#kc-content {
+    max-width: 450px !important;
+    margin: 0 auto !important;
+}
+
 .card-pf,
-.login-pf-page .card-pf {
-    background-color: #2a2a2a !important;
-    border: 1px solid #3a3a3a !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+#kc-form-wrapper,
+#kc-content-wrapper {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+    padding: 40px !important;
+    max-width: 450px !important;
+    margin: 0 auto !important;
 }
 
-/* Light text for dark background */
-.card-pf label,
-.card-pf h1,
-.card-pf h2,
-.card-pf p,
+/* Page title */
 #kc-page-title {
     color: #ffffff !important;
+    font-size: 24px !important;
+    font-weight: 300 !important;
+    text-align: center !important;
+    margin-bottom: 30px !important;
 }
 
-/* Form inputs with better visibility */
-.form-control {
-    background-color: #3a3a3a !important;
-    border: 1px solid #4a4a4a !important;
+/* Form labels */
+.card-pf label,
+label {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 400 !important;
+    margin-bottom: 8px !important;
+}
+
+/* Form inputs with glassmorphism */
+.form-control,
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
     color: #ffffff !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease !important;
 }
 
-.form-control:focus {
-    border-color: #4a90e2 !important;
-    background-color: #3a3a3a !important;
-    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25) !important;
+.form-control:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: rgba(74, 144, 226, 0.6) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.3) !important;
+    outline: none !important;
 }
 
-/* Professional blue buttons */
-.btn-primary {
-    background-color: #4a90e2 !important;
-    border-color: #4a90e2 !important;
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
 }
 
-.btn-primary:hover {
-    background-color: #357abd !important;
-    border-color: #357abd !important;
+/* Primary button with gradient */
+.btn-primary,
+input[type="submit"],
+button[type="submit"] {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 14px 24px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+}
+
+.btn-primary:hover,
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #5ba3f5 0%, #4a90e2 100%) !important;
+    box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4) !important;
+    transform: translateY(-2px) !important;
 }
 
 /* Links */
 a {
     color: #4a90e2 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
 }
 
 a:hover {
@@ -65,14 +128,80 @@ a:hover {
     text-decoration: underline !important;
 }
 
-/* Remember me checkbox label */
-.checkbox label {
-    color: #cccccc !important;
+/* Remember me checkbox */
+.checkbox label,
+.pf-c-check__label {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 14px !important;
 }
 
 /* Error messages */
-.alert-error {
-    background-color: #3a2020 !important;
-    border-color: #5a3030 !important;
+.alert-error,
+.pf-c-alert {
+    background: rgba(255, 107, 107, 0.1) !important;
+    border: 1px solid rgba(255, 107, 107, 0.3) !important;
+    border-radius: 10px !important;
     color: #ff6b6b !important;
+    padding: 12px 16px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Success messages */
+.alert-success {
+    background: rgba(107, 255, 139, 0.1) !important;
+    border: 1px solid rgba(107, 255, 139, 0.3) !important;
+    border-radius: 10px !important;
+    color: #6bff8b !important;
+}
+
+/* Social login buttons */
+.social-provider-container {
+    margin-top: 20px !important;
+}
+
+.social-provider {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+    padding: 12px !important;
+    margin-bottom: 10px !important;
+    transition: all 0.3s ease !important;
+}
+
+.social-provider:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Divider */
+.kc-social-divider {
+    color: rgba(255, 255, 255, 0.5) !important;
+    margin: 20px 0 !important;
+}
+
+/* Footer text */
+#kc-info,
+#kc-info-wrapper {
+    text-align: center !important;
+    margin-top: 20px !important;
+}
+
+#kc-info a,
+#kc-info p {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 14px !important;
+}
+
+/* Hide unnecessary elements */
+.pf-c-brand {
+    display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .card-pf,
+    #kc-form-wrapper,
+    #kc-content-wrapper {
+        padding: 30px 20px !important;
+        border-radius: 15px !important;
+    }
 }
