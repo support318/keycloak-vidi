@@ -287,6 +287,82 @@
             background-color: rgba(255, 255, 255, 0.1) !important;
             caret-color: #ffffff !important;
         }
+        /* Social Providers */
+        #kc-social-providers {
+            margin-top: 20px;
+        }
+        .social-divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .social-divider::before,
+        .social-divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .social-divider span {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 14px;
+            padding: 0 16px;
+        }
+        #kc-social-providers ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #kc-social-providers li {
+            margin-bottom: 10px;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: #ffffff;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        .social-icon {
+            flex-shrink: 0;
+        }
+        /* Legal Footer */
+        .legal-footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .legal-footer a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .legal-footer a:hover {
+            color: #4a90e2;
+        }
+        .footer-divider {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
