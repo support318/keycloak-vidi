@@ -40,15 +40,19 @@
         <#else>
             <#if pageRedirectUri?has_content>
                 <div style="text-align: center; margin-top: 30px;">
-                    <a href="${pageRedirectUri}" style="background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); color: #ffffff; padding: 14px 40px; text-decoration: none; border-radius: 10px; font-size: 16px; font-weight: 500; display: inline-block;">Continue</a>
+                    <a href="${pageRedirectUri}" class="link-btn">Continue</a>
                 </div>
             <#elseif actionUri?has_content>
                 <div style="text-align: center; margin-top: 30px;">
-                    <a href="${actionUri}" style="background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); color: #ffffff; padding: 14px 40px; text-decoration: none; border-radius: 10px; font-size: 16px; font-weight: 500; display: inline-block;">Continue</a>
+                    <a href="${actionUri}" class="link-btn">Continue</a>
                 </div>
             <#elseif (client.baseUrl)?has_content>
                 <div style="text-align: center; margin-top: 30px;">
-                    <a href="${client.baseUrl}" style="background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); color: #ffffff; padding: 14px 40px; text-decoration: none; border-radius: 10px; font-size: 16px; font-weight: 500; display: inline-block;">Continue</a>
+                    <a href="${client.baseUrl}" class="link-btn">Continue</a>
+                </div>
+            <#else>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="${url.loginUrl}" class="link-btn">Continue to Login</a>
                 </div>
             </#if>
         </#if>

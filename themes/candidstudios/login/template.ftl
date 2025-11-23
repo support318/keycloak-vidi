@@ -169,6 +169,28 @@
             box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4);
             transform: translateY(-2px);
         }
+        /* Link styled as button */
+        a.btn-primary, a.link-btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            border: none;
+            border-radius: 10px;
+            color: #ffffff !important;
+            padding: 14px 24px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none !important;
+        }
+        a.btn-primary:hover, a.link-btn:hover {
+            background: linear-gradient(135deg, #5ba3f5 0%, #4a90e2 100%);
+            box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4);
+            transform: translateY(-2px);
+            color: #ffffff !important;
+        }
         .alert {
             padding: 12px 16px;
             border-radius: 10px;
