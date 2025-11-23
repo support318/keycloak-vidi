@@ -247,6 +247,16 @@
             padding-left: 52px !important;
             background: rgba(255, 255, 255, 0.1) !important;
         }
+        /* Fix browser autofill white background */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 50px rgba(30, 30, 50, 1) inset !important;
+            -webkit-text-fill-color: #ffffff !important;
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            caret-color: #ffffff !important;
+        }
     </style>
 </head>
 <body>
