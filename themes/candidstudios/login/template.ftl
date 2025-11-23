@@ -190,10 +190,13 @@
             box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4);
             transform: translateY(-2px);
         }
-        /* ALL buttons must have white text */
-        button, input[type="submit"], .btn, .pf-c-button,
-        #kc-form-buttons input, #kc-form-buttons button,
-        .login-form-wrapper button, .login-form-wrapper input[type="submit"] {
+        /* ALL submit buttons must have white text - be specific to avoid input fields */
+        input[type="submit"],
+        button[type="submit"],
+        .pf-c-button.pf-m-primary,
+        #kc-form-buttons input[type="submit"],
+        #kc-login,
+        .btn-primary {
             background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important;
             border: none !important;
             border-radius: 10px !important;
@@ -205,10 +208,22 @@
             width: 100% !important;
             margin-top: 10px !important;
         }
-        button:hover, input[type="submit"]:hover, .btn:hover, .pf-c-button:hover {
+        input[type="submit"]:hover,
+        button[type="submit"]:hover,
+        .pf-c-button.pf-m-primary:hover,
+        #kc-login:hover,
+        .btn-primary:hover {
             background: linear-gradient(135deg, #5ba3f5 0%, #4a90e2 100%) !important;
             box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4) !important;
             color: #ffffff !important;
+        }
+        /* Ensure password toggle button doesn't get styled as submit */
+        .password-toggle, button.pf-c-button:not([type="submit"]) {
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            width: auto !important;
+            margin: 0 !important;
         }
         /* Link styled as button */
         a.btn-primary, a.link-btn {
