@@ -36,17 +36,15 @@
             </#if>
         </div>
     <#elseif section = "info">
-        <#-- Override the info section with our styled button -->
-        <#if !(skipLink?? && skipLink)>
-            <#if pageRedirectUri?has_content>
-                <a href="${pageRedirectUri}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; box-sizing: border-box;">Continue</a>
-            <#elseif actionUri?has_content>
-                <a href="${actionUri}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; box-sizing: border-box;">Continue</a>
-            <#elseif client?? && client.baseUrl?has_content>
-                <a href="${client.baseUrl}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; box-sizing: border-box;">Continue</a>
-            <#else>
-                <a href="${url.loginUrl}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; box-sizing: border-box;">Continue to Login</a>
-            </#if>
+        <#-- Always show a button - use redirect URIs if available, otherwise login -->
+        <#if pageRedirectUri?has_content>
+            <a href="${pageRedirectUri}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; box-sizing: border-box;">Continue</a>
+        <#elseif actionUri?has_content>
+            <a href="${actionUri}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; box-sizing: border-box;">Continue</a>
+        <#elseif client?? && client.baseUrl?has_content>
+            <a href="${client.baseUrl}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; box-sizing: border-box;">Continue</a>
+        <#else>
+            <a href="${url.loginUrl}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; box-sizing: border-box;">Continue to Login</a>
         </#if>
     </#if>
 </@layout.registrationLayout>
