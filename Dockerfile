@@ -9,8 +9,6 @@ RUN echo "=== BUILD TIMESTAMP: $(date) ===" && \
     ls -R /opt/keycloak/themes/candidstudios && \
     echo "=== Email templates ===" && \
     ls -la /opt/keycloak/themes/candidstudios/email/html/ && \
-    echo "=== Checking for password-reset.ftl ===" && \
-    cat /opt/keycloak/themes/candidstudios/email/html/password-reset.ftl | grep -A2 "href=" && \
     echo "=== Login resources ===" && \
     ls -la /opt/keycloak/themes/candidstudios/login/resources/img/ && \
     echo "=== Theme verification complete ==="
