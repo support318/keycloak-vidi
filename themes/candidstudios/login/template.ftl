@@ -63,6 +63,27 @@
             text-align: center;
             margin: 0 0 30px 0;
         }
+        /* Make all text in the form wrapper readable */
+        .login-form-wrapper p,
+        .login-form-wrapper span,
+        .login-form-wrapper div,
+        .login-form-wrapper li,
+        .login-form-wrapper td,
+        .login-form-wrapper .instruction,
+        .login-form-wrapper .kc-feedback-text,
+        #kc-info-message,
+        #kc-info-message p,
+        .kc-social-section p {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        /* Links should be blue */
+        .login-form-wrapper a:not(.submit-btn):not(.social-link):not(.btn-primary) {
+            color: #4a90e2 !important;
+        }
+        .login-form-wrapper a:not(.submit-btn):not(.social-link):not(.btn-primary):hover {
+            color: #5ba3f5 !important;
+            text-decoration: underline;
+        }
         .form-group {
             margin-bottom: 20px;
         }
