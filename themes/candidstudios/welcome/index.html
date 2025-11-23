@@ -2,8 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://dash.candidstudios.net">
-    <title>Redirecting...</title>
+    <title>Candid Studios Login</title>
     <style>
         body {
             margin: 0;
@@ -39,13 +38,20 @@
         }
     </style>
     <script>
-        window.location.href = 'https://dash.candidstudios.net';
+        // Redirect to Keycloak login with dashboard as the redirect_uri
+        // This ensures ALL users (including admins) go to dashboard after login
+        const loginUrl = '/realms/candidstudios/protocol/openid-connect/auth?' +
+            'client_id=candid-dash' +
+            '&redirect_uri=' + encodeURIComponent('https://dash.candidstudios.net') +
+            '&response_type=code' +
+            '&scope=openid%20profile%20email';
+        window.location.href = loginUrl;
     </script>
 </head>
 <body>
     <div class="container">
         <div class="spinner"></div>
-        <h1>Redirecting to Candid Studios...</h1>
+        <h1>Loading Candid Studios...</h1>
     </div>
 </body>
 </html>
