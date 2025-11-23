@@ -47,7 +47,14 @@
         }
         .login-form-wrapper {
             width: 100%;
-            max-width: 380px;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         .login-form-wrapper h1 {
             color: #ffffff;
@@ -83,7 +90,7 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             color: #ffffff;
-            padding: 14px 16px 14px 48px;
+            padding: 14px 50px 14px 52px;
             font-size: 16px;
             transition: all 0.3s ease;
         }
