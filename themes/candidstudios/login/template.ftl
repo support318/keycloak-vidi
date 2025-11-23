@@ -198,14 +198,30 @@
         .footer-links {
             text-align: center;
             margin-top: 24px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            line-height: 1.5;
         }
         .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
+            color: #4a90e2;
             font-size: 14px;
             text-decoration: none;
         }
         .footer-links a:hover {
-            color: #4a90e2;
+            color: #5ba3f5;
+            text-decoration: underline;
+        }
+        /* Info text styling */
+        #kc-info, #kc-info-wrapper {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #kc-info p {
+            color: rgba(255, 255, 255, 0.8) !important;
+            margin: 0;
         }
         /* SVG Icons */
         .icon-user, .icon-lock, .icon-eye, .icon-eye-off {
