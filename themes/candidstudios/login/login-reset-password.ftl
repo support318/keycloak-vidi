@@ -16,7 +16,7 @@
             </div>
 
             <div class="form-group" style="margin-bottom: 20px;">
-                <a href="${url.loginUrl}" class="forgot-password">&laquo; ${msg("backToLogin")}</a>
+                <a href="${url.loginUrl}" class="forgot-password">« ${msg("backToLogin")}</a>
             </div>
 
             <div id="kc-form-buttons">

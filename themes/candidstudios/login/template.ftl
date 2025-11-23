@@ -228,9 +228,21 @@
             width: 20px;
             height: 20px;
         }
-        /* Hide default Keycloak elements */
+        /* Hide default Keycloak elements and inner panels */
         #kc-header, #kc-header-wrapper {
             display: none !important;
+        }
+        #kc-form, #kc-form-wrapper {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            border-radius: 0 !important;
+        }
+        /* Override any default input styles */
+        input[type="text"], input[type="password"], input[type="email"] {
+            padding-left: 52px !important;
         }
     </style>
 </head>
