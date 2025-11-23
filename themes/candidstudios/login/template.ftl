@@ -171,24 +171,24 @@
         }
         /* Link styled as button */
         a.btn-primary, a.link-btn {
-            display: block;
-            width: 100%;
-            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-            border: none;
-            border-radius: 10px;
+            display: block !important;
+            width: 100% !important;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important;
+            border: none !important;
+            border-radius: 10px !important;
             color: #ffffff !important;
-            padding: 14px 24px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
+            padding: 14px 24px !important;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            text-align: center !important;
             text-decoration: none !important;
         }
         a.btn-primary:hover, a.link-btn:hover {
-            background: linear-gradient(135deg, #5ba3f5 0%, #4a90e2 100%);
-            box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #5ba3f5 0%, #4a90e2 100%) !important;
+            box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4) !important;
+            transform: translateY(-2px) !important;
             color: #ffffff !important;
         }
         .alert {
