@@ -26,24 +26,20 @@ body, html {
     padding: 20px 0 !important;
 }
 
-/* Glassmorphism login card */
-#kc-content {
-    max-width: 450px !important;
-    margin: 0 auto !important;
-}
-
+/* Remove inner panels - main panel is in template.ftl */
+#kc-content,
 .card-pf,
 #kc-form-wrapper,
-#kc-content-wrapper {
-    background: rgba(255, 255, 255, 0.05) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border-radius: 20px !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
-    padding: 40px !important;
-    max-width: 450px !important;
-    margin: 0 auto !important;
+#kc-content-wrapper,
+#kc-form {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 /* Page title */
@@ -198,9 +194,7 @@ a:hover {
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
-    .card-pf,
-    #kc-form-wrapper,
-    #kc-content-wrapper {
+    .login-form-wrapper {
         padding: 30px 20px !important;
         border-radius: 15px !important;
     }
