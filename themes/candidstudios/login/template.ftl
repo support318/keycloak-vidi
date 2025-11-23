@@ -232,8 +232,10 @@
         #kc-header, #kc-header-wrapper {
             display: none !important;
         }
-        #kc-form, #kc-form-wrapper {
-            background: none !important;
+        #kc-form, #kc-form-wrapper, #kc-form-login, #kc-reset-password-form,
+        .kc-form-card, .card-pf, #kc-content, #kc-content-wrapper {
+            background: transparent !important;
+            background-color: transparent !important;
             border: none !important;
             box-shadow: none !important;
             padding: 0 !important;
@@ -243,6 +245,7 @@
         /* Override any default input styles */
         input[type="text"], input[type="password"], input[type="email"] {
             padding-left: 52px !important;
+            background: rgba(255, 255, 255, 0.1) !important;
         }
     </style>
 </head>
