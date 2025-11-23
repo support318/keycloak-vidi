@@ -217,32 +217,30 @@
             border: 1px solid rgba(74, 144, 226, 0.3);
             color: #4a90e2;
         }
+        /* Footer links styled as buttons */
         .footer-links {
             text-align: center;
             margin-top: 24px;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-            line-height: 1.5;
         }
         .footer-links a {
-            color: #4a90e2;
-            font-size: 14px;
-            text-decoration: none;
+            display: block !important;
+            width: 100% !important;
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important;
+            border: none !important;
+            border-radius: 10px !important;
+            color: #ffffff !important;
+            padding: 14px 24px !important;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            text-align: center !important;
+            text-decoration: none !important;
+            box-sizing: border-box !important;
         }
         .footer-links a:hover {
-            color: #5ba3f5;
-            text-decoration: underline;
-        }
-        /* Hide default Keycloak info link - we use our own styled button */
-        #kc-info, #kc-info-wrapper, .footer-links {
-            display: none !important;
-        }
-        #kc-info p {
-            display: none !important;
-        }
-        /* Style for info page links that should look like buttons */
-        #kc-info-message a, .kc-info-message a {
-            display: none !important;
+            background: linear-gradient(135deg, #5ba3f5 0%, #4a90e2 100%) !important;
+            box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4) !important;
+            transform: translateY(-2px) !important;
+            color: #ffffff !important;
         }
         /* SVG Icons */
         .icon-user, .icon-lock, .icon-eye, .icon-eye-off {
