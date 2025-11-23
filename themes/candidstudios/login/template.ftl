@@ -233,7 +233,9 @@
             display: none !important;
         }
         #kc-form, #kc-form-wrapper, #kc-form-login, #kc-reset-password-form,
-        .kc-form-card, .card-pf, #kc-content, #kc-content-wrapper {
+        .kc-form-card, .card-pf, #kc-content, #kc-content-wrapper,
+        .login-form-wrapper > div, .login-form-wrapper form,
+        .login-form-wrapper > div > div {
             background: transparent !important;
             background-color: transparent !important;
             border: none !important;
@@ -241,6 +243,15 @@
             padding: 0 !important;
             margin: 0 !important;
             border-radius: 0 !important;
+        }
+        /* Nuclear option - remove all inner backgrounds */
+        .login-form-wrapper * {
+            background-image: none !important;
+        }
+        .login-form-wrapper div:not(.input-wrapper):not(.form-group):not(.options-row):not(.remember-me):not(.footer-links):not(.alert) {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
         }
         /* Override any default input styles */
         input[type="text"], input[type="password"], input[type="email"] {
