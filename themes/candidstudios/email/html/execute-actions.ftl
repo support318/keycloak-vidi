@@ -1,13 +1,60 @@
 <#import "template.ftl" as layout>
+<#-- Determine user role for personalized messaging -->
+<#assign userRole = "member">
+<#assign roleMessage = "Your Candid Studios account has been created.">
+<#assign roleWelcome = "Welcome to Candid Studios!">
+
+<#if user.realmRoleMappings??>
+  <#list user.realmRoleMappings as role>
+    <#if role.name == "photographer">
+      <#assign userRole = "photographer">
+      <#assign roleWelcome = "Welcome to the Candid Studios Team!">
+      <#assign roleMessage = "You've been added as a <strong>Photographer</strong> on the Candid Studios team. Once you set up your account, you'll be able to access your assignments, schedules, and project details.">
+    <#elseif role.name == "photographer-videographer">
+      <#assign userRole = "photographer-videographer">
+      <#assign roleWelcome = "Welcome to the Candid Studios Team!">
+      <#assign roleMessage = "You've been added as a <strong>Photographer & Videographer</strong> on the Candid Studios team. Once you set up your account, you'll be able to access your assignments, schedules, and project details.">
+    <#elseif role.name == "photo-editor">
+      <#assign userRole = "photo-editor">
+      <#assign roleWelcome = "Welcome to the Candid Studios Team!">
+      <#assign roleMessage = "You've been added as a <strong>Photo Editor</strong> on the Candid Studios team. Once you set up your account, you'll be able to access projects ready for editing and upload your completed work.">
+    <#elseif role.name == "video-editor">
+      <#assign userRole = "video-editor">
+      <#assign roleWelcome = "Welcome to the Candid Studios Team!">
+      <#assign roleMessage = "You've been added as a <strong>Video Editor</strong> on the Candid Studios team. Once you set up your account, you'll be able to access video projects and upload your completed edits.">
+    <#elseif role.name == "photo-video-editor">
+      <#assign userRole = "photo-video-editor">
+      <#assign roleWelcome = "Welcome to the Candid Studios Team!">
+      <#assign roleMessage = "You've been added as a <strong>Photo & Video Editor</strong> on the Candid Studios team. Once you set up your account, you'll be able to access all editing projects.">
+    <#elseif role.name == "client">
+      <#assign userRole = "client">
+      <#assign roleWelcome = "Welcome to Candid Studios!">
+      <#assign roleMessage = "Your client portal account has been created. Once you set up your account, you'll be able to view your galleries, download photos, and manage your projects.">
+    <#elseif role.name == "vendor">
+      <#assign userRole = "vendor">
+      <#assign roleWelcome = "Welcome to Candid Studios!">
+      <#assign roleMessage = "Your vendor partner account has been created. Once you set up your account, you'll be able to access shared projects and collaborate with our team.">
+    <#elseif role.name == "affiliate">
+      <#assign userRole = "affiliate">
+      <#assign roleWelcome = "Welcome to the Candid Studios Referral Program!">
+      <#assign roleMessage = "Your affiliate account has been created. Once you set up your account, you'll be able to access your referral dashboard, track your earnings, and manage your payouts.">
+    <#elseif role.name == "admin">
+      <#assign userRole = "admin">
+      <#assign roleWelcome = "Welcome to Candid Studios Admin!">
+      <#assign roleMessage = "Your administrator account has been created. Once you set up your account, you'll have full access to manage users, projects, and system settings.">
+    </#if>
+  </#list>
+</#if>
+
 <@layout.emailLayout>
-  <h2 style="color: #333333; font-size: 24px; margin-bottom: 20px;">Welcome to Candid Studios!</h2>
+  <h2 style="color: #333333; font-size: 24px; margin-bottom: 20px;">${roleWelcome}</h2>
 
   <p style="color: #555555; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
     Hi<#if user.firstName?has_content> ${user.firstName}</#if>,
   </p>
 
   <p style="color: #555555; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
-    Your Candid Studios account has been created. To get started, please click the button below to set up your password and complete your account setup.
+    ${roleMessage?no_esc} To get started, please click the button below to set up your password.
   </p>
 
   <div style="text-align: center; margin: 30px 0;">
