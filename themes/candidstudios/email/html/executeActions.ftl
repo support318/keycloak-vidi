@@ -17,7 +17,7 @@
   </div>
 
   <p style="color: #555555; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
-    This link will expire in ${linkExpiration} ${linkExpirationFormatter(linkExpiration)}.
+    This link will expire in ${linkExpirationFormatter(linkExpiration)}.
   </p>
 
   <p style="color: #555555; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
