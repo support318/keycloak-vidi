@@ -190,6 +190,26 @@
             box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4);
             transform: translateY(-2px);
         }
+        /* ALL buttons must have white text */
+        button, input[type="submit"], .btn, .pf-c-button,
+        #kc-form-buttons input, #kc-form-buttons button,
+        .login-form-wrapper button, .login-form-wrapper input[type="submit"] {
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important;
+            border: none !important;
+            border-radius: 10px !important;
+            color: #ffffff !important;
+            padding: 14px 24px !important;
+            font-size: 16px !important;
+            font-weight: 500 !important;
+            cursor: pointer !important;
+            width: 100% !important;
+            margin-top: 10px !important;
+        }
+        button:hover, input[type="submit"]:hover, .btn:hover, .pf-c-button:hover {
+            background: linear-gradient(135deg, #5ba3f5 0%, #4a90e2 100%) !important;
+            box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4) !important;
+            color: #ffffff !important;
+        }
         /* Link styled as button */
         a.btn-primary, a.link-btn {
             display: block !important;
