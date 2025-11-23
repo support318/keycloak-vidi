@@ -233,17 +233,16 @@
             color: #5ba3f5;
             text-decoration: underline;
         }
-        /* Info text styling */
-        #kc-info, #kc-info-wrapper {
-            color: rgba(255, 255, 255, 0.8) !important;
-            font-size: 14px;
-            line-height: 1.6;
-            text-align: center;
-            margin-top: 20px;
+        /* Hide default Keycloak info link - we use our own styled button */
+        #kc-info, #kc-info-wrapper, .footer-links {
+            display: none !important;
         }
         #kc-info p {
-            color: rgba(255, 255, 255, 0.8) !important;
-            margin: 0;
+            display: none !important;
+        }
+        /* Style for info page links that should look like buttons */
+        #kc-info-message a, .kc-info-message a {
+            display: none !important;
         }
         /* SVG Icons */
         .icon-user, .icon-lock, .icon-eye, .icon-eye-off {
