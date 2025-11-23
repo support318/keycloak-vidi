@@ -23,7 +23,7 @@
             box-sizing: border-box;
         }
         body {
-            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%) !important;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
             min-height: 100vh;
             margin: 0;
             padding: 0;
@@ -39,60 +39,113 @@
         }
         .logo-wrapper {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
         .logo-wrapper img {
             max-width: 180px;
             height: auto;
         }
-        .login-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            padding: 40px;
+        .login-form-wrapper {
             width: 100%;
-            max-width: 420px;
+            max-width: 380px;
         }
-        .login-card h1 {
+        .login-form-wrapper h1 {
             color: #ffffff;
             font-size: 24px;
             font-weight: 400;
             text-align: center;
             margin: 0 0 30px 0;
         }
-        .login-card label {
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
             color: rgba(255, 255, 255, 0.9);
             font-size: 14px;
             font-weight: 500;
             display: block;
             margin-bottom: 8px;
         }
-        .login-card input[type="text"],
-        .login-card input[type="password"],
-        .login-card input[type="email"] {
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .input-icon {
+            position: absolute;
+            left: 16px;
+            color: rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+        }
+        .input-wrapper input {
             width: 100%;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             color: #ffffff;
-            padding: 14px 16px;
+            padding: 14px 16px 14px 48px;
             font-size: 16px;
-            margin-bottom: 20px;
             transition: all 0.3s ease;
         }
-        .login-card input[type="text"]:focus,
-        .login-card input[type="password"]:focus,
-        .login-card input[type="email"]:focus {
+        .input-wrapper input:focus {
             border-color: rgba(74, 144, 226, 0.6);
             background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 0 20px rgba(74, 144, 226, 0.3);
             outline: none;
         }
-        .login-card input[type="submit"],
-        .login-card button[type="submit"] {
+        .input-wrapper input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        .password-toggle {
+            position: absolute;
+            right: 16px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .password-toggle:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .options-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .remember-me input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            cursor: pointer;
+            accent-color: #4a90e2;
+        }
+        .remember-me label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            cursor: pointer;
+            margin: 0;
+        }
+        .forgot-password {
+            color: #4a90e2;
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .forgot-password:hover {
+            color: #5ba3f5;
+            text-decoration: underline;
+        }
+        .submit-btn {
             width: 100%;
             background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
             border: none;
@@ -103,26 +156,17 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 10px;
         }
-        .login-card input[type="submit"]:hover,
-        .login-card button[type="submit"]:hover {
+        .submit-btn:hover {
             background: linear-gradient(135deg, #5ba3f5 0%, #4a90e2 100%);
             box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4);
             transform: translateY(-2px);
-        }
-        .login-card a {
-            color: #4a90e2;
-            text-decoration: none;
-        }
-        .login-card a:hover {
-            color: #5ba3f5;
-            text-decoration: underline;
         }
         .alert {
             padding: 12px 16px;
             border-radius: 10px;
             margin-bottom: 20px;
+            font-size: 14px;
         }
         .alert-error {
             background: rgba(255, 107, 107, 0.15);
@@ -144,31 +188,24 @@
             border: 1px solid rgba(74, 144, 226, 0.3);
             color: #4a90e2;
         }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .checkbox-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        .checkbox-wrapper label {
-            color: rgba(255, 255, 255, 0.7);
-            margin: 0;
-            font-size: 14px;
-        }
         .footer-links {
             text-align: center;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 24px;
         }
         .footer-links a {
             color: rgba(255, 255, 255, 0.6);
             font-size: 14px;
+            text-decoration: none;
         }
-        /* Hide default Keycloak elements we don't need */
+        .footer-links a:hover {
+            color: #4a90e2;
+        }
+        /* SVG Icons */
+        .icon-user, .icon-lock, .icon-eye, .icon-eye-off {
+            width: 20px;
+            height: 20px;
+        }
+        /* Hide default Keycloak elements */
         #kc-header, #kc-header-wrapper {
             display: none !important;
         }
@@ -180,7 +217,7 @@
             <img src="https://cdn.candidstudios.net/wp-media-folder-candid-studios/Candid.wht2_.png" alt="Candid Studios" />
         </div>
 
-        <div class="login-card">
+        <div class="login-form-wrapper">
             <h1><#nested "header"></h1>
 
             <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
@@ -198,6 +235,24 @@
             </#if>
         </div>
     </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+            const eyeOffIcon = document.getElementById('eye-off-icon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.style.display = 'none';
+                eyeOffIcon.style.display = 'block';
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.style.display = 'block';
+                eyeOffIcon.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
 </#macro>
