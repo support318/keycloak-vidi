@@ -1,5 +1,5 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayMessage=false; section>
+<@layout.registrationLayout displayMessage=false displayInfo=false; section>
     <#if section = "header">
         <#if messageHeader??>
             ${messageHeader}
@@ -7,7 +7,7 @@
             ${message.summary}
         </#if>
     <#elseif section = "form">
-        <div class="info-message">
+        <div class="info-content">
             <#if requiredActions??>
                 <p style="color: rgba(255, 255, 255, 0.8); font-size: 16px; margin-bottom: 20px;">
                     Please complete the following to set up your user profile:
@@ -36,23 +36,21 @@
             </#if>
         </div>
 
-        <#if !(skipLink?? && skipLink)>
+        <#-- Always show button unless skipLink is explicitly true -->
+        <#assign showButton = true>
+        <#if skipLink?? && skipLink>
+            <#assign showButton = false>
+        </#if>
+
+        <#if showButton>
             <#if pageRedirectUri?has_content>
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="${pageRedirectUri}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none;">Continue</a>
-                </div>
+                <a href="${pageRedirectUri}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; margin-top: 20px; box-sizing: border-box;">Continue</a>
             <#elseif actionUri?has_content>
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="${actionUri}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none;">Continue</a>
-                </div>
-            <#elseif (client.baseUrl)?has_content>
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="${client.baseUrl}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none;">Continue</a>
-                </div>
+                <a href="${actionUri}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; margin-top: 20px; box-sizing: border-box;">Continue</a>
+            <#elseif client?? && client.baseUrl?has_content>
+                <a href="${client.baseUrl}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; margin-top: 20px; box-sizing: border-box;">Continue</a>
             <#else>
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="${url.loginUrl}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none;">Continue to Login</a>
-                </div>
+                <a href="${url.loginUrl}" style="display: block; width: 100%; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); border: none; border-radius: 10px; color: #ffffff; padding: 14px 24px; font-size: 16px; font-weight: 500; text-align: center; text-decoration: none; margin-top: 20px; box-sizing: border-box;">Continue to Login</a>
             </#if>
         </#if>
     </#if>
