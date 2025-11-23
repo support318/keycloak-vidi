@@ -38,7 +38,7 @@
                             </p>
                             <p style="color: #888888; font-size: 13px; line-height: 1.6; margin: 10px 0 0 0; text-align: center;">
                                 <a href="https://www.candidstudios.net" style="color: #4a90e2; text-decoration: none;">Visit Our Website</a> |
-                                <a href="https://www.candidstudios.net/contact" style="color: #4a90e2; text-decoration: none;">Contact Support</a>
+                                <a href="mailto:support@candidstudios.net" style="color: #4a90e2; text-decoration: none;">Contact Support</a>
                             </p>
                             <p style="color: #aaaaaa; font-size: 12px; line-height: 1.5; margin: 15px 0 0 0; text-align: center;">
                                 © ${.now?string('yyyy')} Candid Studios. All rights reserved.<br>
@@ -52,7 +52,7 @@
                 <table role="presentation" style="max-width: 600px; margin: 20px auto 0 auto;">
                     <tr>
                         <td style="text-align: center; color: #999999; font-size: 12px; line-height: 1.5;">
-                            Please do not reply to this email. For support, visit our <a href="https://www.candidstudios.net/contact" style="color: #4a90e2; text-decoration: none;">Contact Page</a>.
+                            Please do not reply to this email. For support, email us at <a href="mailto:support@candidstudios.net" style="color: #4a90e2; text-decoration: none;">support@candidstudios.net</a>.
                         </td>
                     </tr>
                 </table>
