@@ -40,12 +40,8 @@
     <script>
         // Redirect to Keycloak login with dashboard as the redirect_uri
         // This ensures ALL users (including admins) go to dashboard after login
-        const loginUrl = '/realms/candidstudios/protocol/openid-connect/auth?' +
-            'client_id=candid-dash' +
-            '&redirect_uri=' + encodeURIComponent('https://dash.candidstudios.net') +
-            '&response_type=code' +
-            '&scope=openid%20profile%20email';
-        window.location.href = loginUrl;
+        // Simply redirect to the dashboard - it will handle auth
+        window.location.href = 'https://dash.candidstudios.net';
     </script>
 </head>
 <body>
