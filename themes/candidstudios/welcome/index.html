@@ -38,13 +38,12 @@
         }
     </style>
     <script>
-        // Redirect to candidstudios realm login with dashboard as the target
-        // This ensures all social logins (Google, Microsoft, Facebook) are shown
+        // Redirect to master realm login with dashboard as the target
         // After login, user lands on dash.candidstudios.net
-        const authUrl = 'https://login.candidstudios.net/realms/candidstudios/protocol/openid-connect/auth';
+        const authUrl = 'https://login.candidstudios.net/realms/master/protocol/openid-connect/auth';
         const params = new URLSearchParams({
             client_id: 'candid-dash',
-            redirect_uri: 'https://dash.candidstudios.net',
+            redirect_uri: 'https://dash.candidstudios.net/',
             response_type: 'code',
             scope: 'openid profile email'
         });
