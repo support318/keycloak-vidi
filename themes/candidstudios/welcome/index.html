@@ -38,9 +38,17 @@
         }
     </style>
     <script>
-        // Redirect to candidstudios realm login directly
+        // Redirect to candidstudios realm login with dashboard as the target
         // This ensures all social logins (Google, Microsoft, Facebook) are shown
-        window.location.href = 'https://login.candidstudios.net/realms/candidstudios/account';
+        // After login, user lands on dash.candidstudios.net
+        const authUrl = 'https://login.candidstudios.net/realms/candidstudios/protocol/openid-connect/auth';
+        const params = new URLSearchParams({
+            client_id: 'candid-dash',
+            redirect_uri: 'https://dash.candidstudios.net',
+            response_type: 'code',
+            scope: 'openid profile email'
+        });
+        window.location.href = authUrl + '?' + params.toString();
     </script>
 </head>
 <body>
