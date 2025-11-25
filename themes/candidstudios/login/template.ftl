@@ -395,29 +395,43 @@
         .social-icon {
             flex-shrink: 0;
         }
-        /* Legal Footer */
+        /* Legal Footer - Fixed at bottom */
         .legal-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             gap: 8px;
-            margin-top: 24px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 20px;
+            background: rgba(15, 15, 26, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         .legal-footer a {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.6) !important;
             font-size: 13px;
-            text-decoration: none;
+            text-decoration: none !important;
             transition: color 0.3s ease;
+            background: none !important;
+            padding: 0 !important;
+            display: inline !important;
+            width: auto !important;
         }
         .legal-footer a:hover {
-            color: #4a90e2;
+            color: #4a90e2 !important;
         }
         .footer-divider {
             color: rgba(255, 255, 255, 0.2);
             font-size: 12px;
+        }
+        /* Add padding to body to account for fixed footer */
+        .login-container {
+            padding-bottom: 60px;
         }
     </style>
 </head>
@@ -444,6 +458,15 @@
                 </div>
             </#if>
         </div>
+    </div>
+
+    <!-- Legal Footer -->
+    <div class="legal-footer">
+        <a href="https://earn.candidstudios.net/terms" target="_blank">Terms & Conditions</a>
+        <span class="footer-divider">•</span>
+        <a href="https://earn.candidstudios.net/privacy" target="_blank">Privacy Policy</a>
+        <span class="footer-divider">•</span>
+        <a href="mailto:support@candidstudios.net">Support</a>
     </div>
 
     <script>
