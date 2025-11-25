@@ -407,13 +407,10 @@
             align-items: center;
             gap: 8px;
             padding: 16px 20px;
-            background: rgba(15, 15, 26, 0.9);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: transparent;
         }
         .legal-footer a {
-            color: rgba(255, 255, 255, 0.6) !important;
+            color: rgba(255, 255, 255, 0.5) !important;
             font-size: 13px;
             text-decoration: none !important;
             transition: color 0.3s ease;

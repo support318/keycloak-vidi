@@ -1,7 +1,7 @@
 FROM quay.io/keycloak/keycloak:26.4.5
 
 # Cache buster - change this value to force rebuild
-ARG CACHE_BUST=2025-11-25-v1
+ARG CACHE_BUST=2025-11-25-v2
 
 # Copy Candid Studios custom theme
 COPY themes/candidstudios /opt/keycloak/themes/candidstudios
