@@ -1,7 +1,7 @@
 FROM quay.io/keycloak/keycloak:26.4.5
 
 # Cache buster - change this value to force rebuild
-ARG CACHE_BUST=2025-11-23-v3
+ARG CACHE_BUST=2025-11-25-v1
 
 # Copy Candid Studios custom theme
 COPY themes/candidstudios /opt/keycloak/themes/candidstudios
@@ -15,8 +15,8 @@ RUN echo "=== BUILD TIMESTAMP: $(date) ===" && \
     ls -la /opt/keycloak/themes/candidstudios/email/html/ && \
     echo "=== Login resources ===" && \
     ls -la /opt/keycloak/themes/candidstudios/login/resources/img/ && \
-    echo "=== Login.ftl content check (looking for legal-footer) ===" && \
-    grep -c "legal-footer" /opt/keycloak/themes/candidstudios/login/login.ftl && \
+    echo "=== Template.ftl content check (looking for legal-footer) ===" && \
+    grep -c "legal-footer" /opt/keycloak/themes/candidstudios/login/template.ftl && \
     grep -c "social-providers" /opt/keycloak/themes/candidstudios/login/login.ftl && \
     echo "=== Theme verification complete ==="
 
