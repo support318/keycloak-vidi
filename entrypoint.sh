@@ -8,9 +8,9 @@ ADMIN_PASS="${KEYCLOAK_ADMIN_PASSWORD:-admin}"
 
 echo "Admin user will be: ${ADMIN_USER}"
 
-# Start Keycloak in background
+# Start Keycloak in background with candidstudios welcome theme
 echo "Starting Keycloak in background..."
-/opt/keycloak/bin/kc.sh start --optimized &
+/opt/keycloak/bin/kc.sh start --optimized --spi-theme-welcome-theme=candidstudios &
 KC_PID=$!
 
 # Wait for Keycloak to be ready
