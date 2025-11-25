@@ -38,10 +38,9 @@
         }
     </style>
     <script>
-        // Redirect to Keycloak login with dashboard as the redirect_uri
-        // This ensures ALL users (including admins) go to dashboard after login
-        // Simply redirect to the dashboard - it will handle auth
-        window.location.href = 'https://dash.candidstudios.net';
+        // Redirect to candidstudios realm login directly
+        // This ensures all social logins (Google, Microsoft, Facebook) are shown
+        window.location.href = 'https://login.candidstudios.net/realms/candidstudios/account';
     </script>
 </head>
 <body>
