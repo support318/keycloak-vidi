@@ -60,18 +60,13 @@
             </#if>
         </div>
     <#elseif section = "info">
-        <#-- If there's an actionUri (for required actions like password setup), use that -->
-        <#if actionUri?has_content>
+        <#-- Check if there are still required actions to complete -->
+        <#if requiredActions?? && (requiredActions?size > 0) && actionUri?has_content>
+            <#-- Still have required actions, use actionUri to proceed -->
             <a href="${actionUri}" style="display: block !important; width: 100% !important; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important; border: none !important; border-radius: 10px !important; color: #ffffff !important; padding: 14px 24px !important; font-size: 16px !important; font-weight: 500 !important; text-align: center !important; text-decoration: none !important; box-sizing: border-box !important;">Continue</a>
         <#else>
-            <#-- No action needed, redirect to dashboard -->
-            <#assign buttonUrl = "https://login.candidstudios.net">
-            <#if pageRedirectUri?has_content && pageRedirectUri?contains("candidstudios.net") && !pageRedirectUri?contains("admin.candidstudios.net")>
-                <#assign buttonUrl = pageRedirectUri>
-            <#elseif client?? && client.baseUrl?has_content && client.baseUrl?contains("candidstudios.net") && !client.baseUrl?contains("admin.candidstudios.net")>
-                <#assign buttonUrl = client.baseUrl>
-            </#if>
-            <a href="${buttonUrl}" style="display: block !important; width: 100% !important; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important; border: none !important; border-radius: 10px !important; color: #ffffff !important; padding: 14px 24px !important; font-size: 16px !important; font-weight: 500 !important; text-align: center !important; text-decoration: none !important; box-sizing: border-box !important;">Continue to Dashboard</a>
+            <#-- No more required actions, always go to dashboard -->
+            <a href="https://login.candidstudios.net" style="display: block !important; width: 100% !important; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important; border: none !important; border-radius: 10px !important; color: #ffffff !important; padding: 14px 24px !important; font-size: 16px !important; font-weight: 500 !important; text-align: center !important; text-decoration: none !important; box-sizing: border-box !important;">Continue to Dashboard</a>
         </#if>
     </#if>
 </@layout.registrationLayout>
