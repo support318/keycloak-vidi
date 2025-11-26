@@ -7,13 +7,17 @@
             ${message.summary}
         </#if>
     <#elseif section = "form">
-        <#-- Always auto-redirect to dashboard - never leave users on Keycloak -->
-        <#assign shouldRedirectToDashboard = true>
-        <#-- Only skip auto-redirect if going to a known Candid Studios app -->
-        <#if pageRedirectUri?has_content && (pageRedirectUri?contains("candidstudios.net") && !pageRedirectUri?contains("admin.candidstudios.net"))>
-            <#assign shouldRedirectToDashboard = false>
-        <#elseif client?? && client.baseUrl?has_content && (client.baseUrl?contains("candidstudios.net") && !client.baseUrl?contains("admin.candidstudios.net"))>
-            <#assign shouldRedirectToDashboard = false>
+        <#-- Only auto-redirect when there are NO required actions remaining -->
+        <#assign shouldRedirectToDashboard = false>
+        <#if !requiredActions?? || (requiredActions?size == 0)>
+            <#-- No required actions, check if we should redirect -->
+            <#assign shouldRedirectToDashboard = true>
+            <#-- Only skip auto-redirect if going to a known Candid Studios app (not admin) -->
+            <#if pageRedirectUri?has_content && (pageRedirectUri?contains("candidstudios.net") && !pageRedirectUri?contains("admin.candidstudios.net"))>
+                <#assign shouldRedirectToDashboard = false>
+            <#elseif client?? && client.baseUrl?has_content && (client.baseUrl?contains("candidstudios.net") && !client.baseUrl?contains("admin.candidstudios.net"))>
+                <#assign shouldRedirectToDashboard = false>
+            </#if>
         </#if>
 
         <#if shouldRedirectToDashboard>
