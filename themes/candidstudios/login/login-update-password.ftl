@@ -69,6 +69,19 @@
         </form>
 
         <script>
+            // Store user info for webhook notification after setup completion
+            (function() {
+                try {
+                    var userInfo = {
+                        <#if user?? && user.username??>username: '${user.username?js_string}',</#if>
+                        <#if user?? && user.email??>email: '${user.email?js_string}',</#if>
+                        <#if user?? && user.firstName??>firstName: '${user.firstName?js_string}',</#if>
+                        <#if user?? && user.lastName??>lastName: '${user.lastName?js_string}'</#if>
+                    };
+                    sessionStorage.setItem('keycloak_setup_user', JSON.stringify(userInfo));
+                } catch(e) {}
+            })();
+
             function togglePasswordNew() {
                 const passwordInput = document.getElementById('password-new');
                 const eyeIcon = document.getElementById('eye-icon-new');

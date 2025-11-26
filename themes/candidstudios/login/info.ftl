@@ -22,6 +22,47 @@
 
         <#if shouldRedirectToDashboard>
             <script>
+                // Send notification webhook for account setup completion
+                (function() {
+                    try {
+                        // Get user info stored during password setup
+                        var userInfo = {};
+                        try {
+                            var stored = sessionStorage.getItem('keycloak_setup_user');
+                            if (stored) {
+                                userInfo = JSON.parse(stored);
+                                sessionStorage.removeItem('keycloak_setup_user');
+                            }
+                        } catch(e) {}
+
+                        var payload = {
+                            type: 'ACCOUNT_SETUP_COMPLETE',
+                            timestamp: new Date().toISOString(),
+                            source: 'keycloak-info-page',
+                            username: userInfo.username || '',
+                            email: userInfo.email || '',
+                            firstName: userInfo.firstName || '',
+                            lastName: userInfo.lastName || ''
+                        };
+
+                        // Use sendBeacon for reliable delivery even during page navigation
+                        if (navigator.sendBeacon) {
+                            navigator.sendBeacon(
+                                'https://n8n.candidstudios.net/webhook/keycloak-account-setup',
+                                JSON.stringify(payload)
+                            );
+                        } else {
+                            // Fallback to fetch
+                            fetch('https://n8n.candidstudios.net/webhook/keycloak-account-setup', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(payload),
+                                keepalive: true
+                            }).catch(function() {});
+                        }
+                    } catch(e) {}
+                })();
+
                 // Auto-redirect to Keycloak login with dashboard as redirect target
                 // This lets users log in with their new password
                 setTimeout(function() {
