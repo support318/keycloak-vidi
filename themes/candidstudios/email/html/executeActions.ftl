@@ -11,7 +11,9 @@
   </p>
 
   <div style="text-align: center; margin: 30px 0;">
-    <a href="${link}" style="background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); color: #ffffff; padding: 16px 40px; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: 600; display: inline-block;">
+    <#-- Add redirect_uri to the link so users go to dashboard after completing actions -->
+    <#assign linkWithRedirect = link + "&redirect_uri=https%3A%2F%2Flogin.candidstudios.net&client_id=candid-dash">
+    <a href="${linkWithRedirect}" style="background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%); color: #ffffff; padding: 16px 40px; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: 600; display: inline-block;">
       Set Up My Profile
     </a>
   </div>
