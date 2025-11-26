@@ -38,16 +38,8 @@
         }
     </style>
     <script>
-        // Redirect to master realm login with dashboard as the target
-        // After login, user lands on dash.candidstudios.net
-        const authUrl = 'https://login.candidstudios.net/realms/master/protocol/openid-connect/auth';
-        const params = new URLSearchParams({
-            client_id: 'candid-dash',
-            redirect_uri: 'https://dash.candidstudios.net/',
-            response_type: 'code',
-            scope: 'openid profile email'
-        });
-        window.location.href = authUrl + '?' + params.toString();
+        // Always redirect to the dashboard - it will handle authentication
+        window.location.replace('https://login.candidstudios.net');
     </script>
 </head>
 <body>

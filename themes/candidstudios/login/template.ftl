@@ -483,22 +483,34 @@
             }
         }
 
-        // Global redirect check - if we end up on admin.candidstudios.net welcome/home page, redirect to dashboard
+        // Global redirect check - redirect from admin.candidstudios.net to dashboard after completing auth
         (function() {
-            const currentUrl = window.location.href;
             const currentPath = window.location.pathname;
+            const currentSearch = window.location.search;
 
-            // If we're on admin.candidstudios.net and on the welcome/home page (not a login flow), redirect to dashboard
+            // If we're on admin.candidstudios.net, check if this is an active login flow or completed
             if (window.location.hostname === 'admin.candidstudios.net') {
-                // Check if this is a "completed" state - no login form, just a welcome/info page
-                // The welcome page or account page after completing actions
-                if (currentPath === '/' ||
-                    currentPath === '/admin/' ||
-                    currentPath === '/admin/master/console/' ||
-                    currentPath.includes('/welcome') ||
-                    (currentPath.includes('/account') && !currentPath.includes('/login-actions'))) {
-                    // Redirect to dashboard
-                    window.location.href = 'https://login.candidstudios.net';
+                // These paths are ACTIVE login flows - do NOT redirect
+                const activeFlowPaths = [
+                    '/login-actions/authenticate',
+                    '/login-actions/required-action',
+                    '/login-actions/first-broker-login',
+                    '/protocol/openid-connect/auth',
+                    '/protocol/openid-connect/login-status-iframe',
+                    '/broker/'
+                ];
+
+                // Check if this is an active login flow
+                const isActiveFlow = activeFlowPaths.some(path => currentPath.includes(path));
+
+                // Also check if there's an action token (means we're in a flow)
+                const hasActionToken = currentSearch.includes('key=') ||
+                                       currentSearch.includes('execution=') ||
+                                       currentSearch.includes('session_code=');
+
+                // If NOT an active flow and NOT on admin console, redirect to dashboard
+                if (!isActiveFlow && !hasActionToken && !currentPath.startsWith('/admin')) {
+                    window.location.replace('https://login.candidstudios.net');
                 }
             }
         })();

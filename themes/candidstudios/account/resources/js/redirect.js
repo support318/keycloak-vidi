@@ -1,9 +1,7 @@
-// Redirect users from Keycloak account page to the dashboard
+// Redirect from Keycloak account pages to the dashboard
 (function() {
-  // Only redirect if we're on the account page (not admin)
-  if (window.location.pathname.includes('/realms/') &&
-      window.location.pathname.includes('/account') &&
-      !window.location.pathname.includes('/admin')) {
-    window.location.href = 'https://dash.candidstudios.net';
-  }
+    // If we are on admin.candidstudios.net, redirect to dashboard
+    if (window.location.hostname === "admin.candidstudios.net") {
+        window.location.replace("https://login.candidstudios.net");
+    }
 })();
