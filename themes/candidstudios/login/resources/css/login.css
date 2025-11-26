@@ -214,9 +214,7 @@ footer,
 .pf-c-login,
 .pf-c-login__container,
 .pf-c-login__main,
-.pf-c-login__main-body,
-div[class*="pf-"],
-section[class*="pf-"] {
+.pf-c-login__main-body {
     background: transparent !important;
     background-color: transparent !important;
     border: none !important;
