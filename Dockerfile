@@ -1,7 +1,7 @@
 FROM quay.io/keycloak/keycloak:26.4.5
 
 # Cache buster - change this value to force rebuild
-ARG CACHE_BUST=2025-11-25-v14-fix-toggle-and-redirect
+ARG CACHE_BUST=2025-11-25-v15-match-login-toggle-pattern
 
 # Copy Candid Studios custom theme
 COPY themes/candidstudios /opt/keycloak/themes/candidstudios
