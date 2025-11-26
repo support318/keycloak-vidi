@@ -100,6 +100,7 @@
                     eyeOffIcon.style.display = 'none';
                 }
             }
+
         </script>
     </#if>
 </@layout.registrationLayout>

@@ -482,6 +482,26 @@
                 eyeOffIcon.style.display = 'none';
             }
         }
+
+        // Global redirect check - if we end up on admin.candidstudios.net welcome/home page, redirect to dashboard
+        (function() {
+            const currentUrl = window.location.href;
+            const currentPath = window.location.pathname;
+
+            // If we're on admin.candidstudios.net and on the welcome/home page (not a login flow), redirect to dashboard
+            if (window.location.hostname === 'admin.candidstudios.net') {
+                // Check if this is a "completed" state - no login form, just a welcome/info page
+                // The welcome page or account page after completing actions
+                if (currentPath === '/' ||
+                    currentPath === '/admin/' ||
+                    currentPath === '/admin/master/console/' ||
+                    currentPath.includes('/welcome') ||
+                    (currentPath.includes('/account') && !currentPath.includes('/login-actions'))) {
+                    // Redirect to dashboard
+                    window.location.href = 'https://login.candidstudios.net';
+                }
+            }
+        })();
     </script>
 </body>
 </html>
