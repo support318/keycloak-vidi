@@ -7,6 +7,18 @@
             ${message.summary}
         </#if>
     <#elseif section = "form">
+        <#-- Auto-redirect to dashboard if no specific redirect URI is set -->
+        <#if !pageRedirectUri?has_content && !actionUri?has_content && !(client?? && client.baseUrl?has_content)>
+            <script>
+                // Auto-redirect to dashboard after 2 seconds
+                setTimeout(function() {
+                    window.location.href = 'https://login.candidstudios.net';
+                }, 2000);
+            </script>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 16px; text-align: center; margin-bottom: 20px;">
+                Redirecting to dashboard...
+            </p>
+        </#if>
         <div class="info-content">
             <#if requiredActions??>
                 <p style="color: rgba(255, 255, 255, 0.8); font-size: 16px; margin-bottom: 20px;">
