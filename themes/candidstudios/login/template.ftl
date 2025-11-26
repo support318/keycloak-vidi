@@ -8,28 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${msg("loginTitle",(realm.displayName!''))}</title>
     <script>
-        // IMMEDIATE redirect check - runs before page renders
+        // Intercept security-admin-console redirects only
+        // This catches users who completed password setup from admin console emails
         (function() {
-            var path = window.location.pathname;
             var search = window.location.search;
-            var host = window.location.hostname;
 
-            // If on admin.candidstudios.net and NOT in an active login flow, redirect to login
-            if (host === 'admin.candidstudios.net') {
-                // These indicate active flows - don't redirect
-                var isActiveFlow =
-                    path.indexOf('/login-actions/') !== -1 ||
-                    path.indexOf('/protocol/openid-connect/auth') !== -1 ||
-                    path.indexOf('/broker/') !== -1 ||
-                    path.indexOf('/admin/') !== -1 ||
-                    search.indexOf('session_code=') !== -1 ||
-                    search.indexOf('execution=') !== -1 ||
-                    search.indexOf('tab_id=') !== -1;
-
-                // If not active flow, redirect to Keycloak login with dashboard target
-                if (!isActiveFlow) {
-                    window.location.replace('https://admin.candidstudios.net/realms/master/protocol/openid-connect/auth?client_id=candid-dash&redirect_uri=https%3A%2F%2Flogin.candidstudios.net&response_type=code&scope=openid');
-                }
+            // ONLY intercept if this is explicitly the security-admin-console client
+            // This happens when password setup emails are sent from Keycloak admin UI
+            if (search.indexOf('client_id=security-admin-console') !== -1) {
+                // Redirect to dashboard login instead of admin console
+                window.location.replace('https://admin.candidstudios.net/realms/master/protocol/openid-connect/auth?client_id=candid-dash&redirect_uri=https%3A%2F%2Flogin.candidstudios.net&response_type=code&scope=openid');
             }
         })();
     </script>
