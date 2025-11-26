@@ -22,13 +22,14 @@
 
         <#if shouldRedirectToDashboard>
             <script>
-                // Auto-redirect to dashboard after 1 second
+                // Auto-redirect to Keycloak login with dashboard as redirect target
+                // This lets users log in with their new password
                 setTimeout(function() {
-                    window.location.href = 'https://login.candidstudios.net';
+                    window.location.href = 'https://admin.candidstudios.net/realms/master/protocol/openid-connect/auth?client_id=candid-dash&redirect_uri=https%3A%2F%2Flogin.candidstudios.net&response_type=code&scope=openid';
                 }, 1000);
             </script>
             <p style="color: rgba(255, 255, 255, 0.8); font-size: 16px; text-align: center; margin-bottom: 20px;">
-                Redirecting to dashboard...
+                Redirecting to login...
             </p>
         </#if>
         <div class="info-content">
@@ -65,8 +66,8 @@
             <#-- Still have required actions, use actionUri to proceed -->
             <a href="${actionUri}" style="display: block !important; width: 100% !important; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important; border: none !important; border-radius: 10px !important; color: #ffffff !important; padding: 14px 24px !important; font-size: 16px !important; font-weight: 500 !important; text-align: center !important; text-decoration: none !important; box-sizing: border-box !important;">Continue</a>
         <#else>
-            <#-- No more required actions, always go to dashboard -->
-            <a href="https://login.candidstudios.net" style="display: block !important; width: 100% !important; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important; border: none !important; border-radius: 10px !important; color: #ffffff !important; padding: 14px 24px !important; font-size: 16px !important; font-weight: 500 !important; text-align: center !important; text-decoration: none !important; box-sizing: border-box !important;">Continue to Dashboard</a>
+            <#-- No more required actions, redirect to login page with dashboard as target -->
+            <a href="https://admin.candidstudios.net/realms/master/protocol/openid-connect/auth?client_id=candid-dash&redirect_uri=https%3A%2F%2Flogin.candidstudios.net&response_type=code&scope=openid" style="display: block !important; width: 100% !important; background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important; border: none !important; border-radius: 10px !important; color: #ffffff !important; padding: 14px 24px !important; font-size: 16px !important; font-weight: 500 !important; text-align: center !important; text-decoration: none !important; box-sizing: border-box !important;">Continue to Login</a>
         </#if>
     </#if>
 </@layout.registrationLayout>
