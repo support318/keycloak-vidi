@@ -192,6 +192,36 @@ a:hover {
     display: none !important;
 }
 
+/* Hide PatternFly blue bar/footer and any other bars */
+.pf-c-page__main-section,
+.pf-c-page__main,
+.pf-c-alert-group,
+.pf-c-page__main-breadcrumb,
+.pf-c-page__footer,
+.pf-c-background-image,
+#kc-locale,
+#kc-locale-wrapper,
+.pf-c-login__footer,
+.pf-c-login__main-footer,
+.pf-c-login__main-footer-band,
+.pf-c-login__main-header,
+footer,
+.kc-login-tooltip {
+    display: none !important;
+}
+
+/* Remove any blue backgrounds from PatternFly elements */
+.pf-c-login,
+.pf-c-login__container,
+.pf-c-login__main,
+.pf-c-login__main-body,
+div[class*="pf-"],
+section[class*="pf-"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 480px) {
     .login-form-wrapper {
