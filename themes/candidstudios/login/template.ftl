@@ -509,6 +509,7 @@
                     '/login-actions/authenticate',
                     '/login-actions/required-action',
                     '/login-actions/first-broker-login',
+                    '/login-actions/reset-credentials',
                     '/protocol/openid-connect/auth',
                     '/protocol/openid-connect/login-status-iframe',
                     '/broker/'
