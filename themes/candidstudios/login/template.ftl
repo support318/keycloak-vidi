@@ -437,10 +437,11 @@
             color: rgba(255, 255, 255, 0.2);
             font-size: 12px;
         }
-        /* Ensure background covers full page */
-        html {
+        /* Ensure background covers full page - no black bar */
+        html, body {
             min-height: 100%;
-            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%);
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%) !important;
+            background-attachment: fixed !important;
         }
     </style>
 </head>
