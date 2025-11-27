@@ -7,10 +7,12 @@
             ${message.summary}
         </#if>
     <#elseif section = "form">
-        <#-- Only auto-redirect when there are NO required actions remaining -->
+        <#-- Only auto-redirect after password setup completion (not during forgot password flow) -->
         <#assign shouldRedirectToDashboard = false>
-        <#if !requiredActions?? || (requiredActions?size == 0)>
-            <#-- No required actions, check if we should redirect -->
+        <#-- Check if message indicates password was updated (not just starting reset flow) -->
+        <#assign isPasswordUpdateComplete = message?? && message.summary?? && (message.summary?contains("updated") || message.summary?contains("Updated") || message.summary?contains("success") || message.summary?contains("Success"))>
+        <#if isPasswordUpdateComplete && (!requiredActions?? || (requiredActions?size == 0))>
+            <#-- Password was updated and no more required actions, check if we should redirect -->
             <#assign shouldRedirectToDashboard = true>
             <#-- Only skip auto-redirect if going to a known Candid Studios app (not admin) -->
             <#if pageRedirectUri?has_content && (pageRedirectUri?contains("candidstudios.net") && !pageRedirectUri?contains("admin.candidstudios.net"))>
